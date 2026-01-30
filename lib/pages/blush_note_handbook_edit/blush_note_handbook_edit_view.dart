@@ -440,7 +440,7 @@ class BlushNoteHandbookEditView extends GetView<BlushNoteHandbookEditLogic> {
                   borderRadius: BorderRadius.circular(8.r),
                 ),
                 child: Icon(
-                  IconData(iconCodePoint, fontFamily: iconFamily),
+                  Icons.star,
                   size: size,
                   color: color,
                 ),

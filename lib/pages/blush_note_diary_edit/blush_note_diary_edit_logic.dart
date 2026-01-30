@@ -205,7 +205,7 @@ class BlushNoteDiaryEditLogic extends GetxController {
               final isSelected = weather.value == option['value'];
               
               return ListTile(
-                leading: Icon(option['icon'] as IconData),
+                leading: Icon(Icons.wb_sunny),
                 title: Text(option['name'] as String),
                 trailing: isSelected ? const Icon(Icons.check) : null,
                 onTap: () => Get.back(result: option['value']),

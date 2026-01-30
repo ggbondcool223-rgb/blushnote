@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:blush_note/db_blush_note/index.dart';
 import 'package:blush_note/utils/index.dart';
@@ -84,61 +84,48 @@ class BlushNoteHandbookListLogic extends GetxController {
   
   Future<void> onSaveToGallery(int id) async {
     try {
-      print('🎯 开始保存手帐到相册，ID: $id');
-      
+
       final hasPermission = await _requestStoragePermission();
-      print('🔑 权限检查结果: $hasPermission');
-      
+
       if (!hasPermission) {
         errorToast('Storage permission denied');
-        print('❌ 权限被拒绝，保存终止');
         return;
       }
 
-      print('✅ 权限已授予，开始读取图片');
-      
+
       final handbook = await db.getHandbookById(id);
       
       if (handbook == null) {
         errorToast('Handbook not found');
-        print('❌ 手帐记录不存在');
         return;
       }
       
       if (handbook.imagePath == null || handbook.imagePath!.isEmpty) {
         errorToast('Please edit and save the handbook first');
-        print('❌ 图片路径为空，需要先编辑保存');
         return;
       }
       
-      print('📂 图片路径: ${handbook.imagePath}');
-      
+
       final imageFile = File(handbook.imagePath!);
       if (!await imageFile.exists()) {
         errorToast('Image file not found. Please edit and save again');
-        print('❌ 图片文件不存在: ${handbook.imagePath}');
         return;
       }
 
-      print('💾 开始保存到相册...');
-      
-      final result = await ImageGallerySaver.saveFile(
+
+      final result = await ImageGallerySaverPlus.saveFile(
         handbook.imagePath!,
         name: 'handbook_${DateTime.now().millisecondsSinceEpoch}',
       );
 
-      print('📊 保存结果: $result');
 
       if (result['isSuccess'] == true) {
         successToast('Saved to gallery');
-        print('✅ 保存成功！');
       } else {
         errorToast('Failed to save to gallery');
-        print('❌ 保存失败: $result');
       }
     } catch (e) {
       errorToast('Failed to save: ${e.toString()}');
-      print('❌ 保存过程出错: $e');
     }
   }
   
