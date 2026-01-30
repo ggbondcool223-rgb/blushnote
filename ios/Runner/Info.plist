@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Blush Note</string>
+	<string>FARLEY LLC</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +15,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>blush_note</string>
+	<string>FARLEY LLC</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -23,6 +25,18 @@
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Please grant access to your camera so that images can be added to your manual.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Please authorize your microphone to record audio of your diary.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please grant your gallery permission before the manual can be saved to your photo library.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please grant access to your photo library so that images can be added to your manual.</string>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>Please grant you notification permission to receive schedule reminders.</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -41,19 +55,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to your photo library to add images to your handbook</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>We need permission to save handbooks to your photo library</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>We need access to your microphone to record audio for your diary</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need access to your camera to record videos for your diary</string>
-	<key>NSUserNotificationsUsageDescription</key>
-	<string>We need permission to send you reminders for your schedules</string>
 </dict>
 </plist>

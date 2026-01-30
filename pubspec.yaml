@@ -84,6 +84,18 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+  # flutter pub run flutter_launcher_icons:main
+flutter_launcher_icons:
+  image_path: "assets/diary.png"
+  android: true
+  ios: true
+  web:
+    generate: true
+    image_path: "assets/diary.png"
+    background_color: "#FFFFFF"
+    theme_color: "#FFFFFF"
 
 dependency_overrides:
   record_linux: ^1.2.1

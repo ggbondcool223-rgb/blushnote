@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import '../blush_note_update/blush_note_update_logic.dart';
 
 class BlushNoteTabIncome extends GetView<BlushNoteUpdateLogic> {
+  const BlushNoteTabIncome({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class BlushNoteTabIncome extends GetView<BlushNoteUpdateLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.ucso.value)),
+              url: WebUri.uri(Uri.parse(controller.zlrq.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

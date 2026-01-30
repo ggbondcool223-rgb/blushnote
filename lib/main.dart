@@ -1,3 +1,6 @@
+import 'package:blush_note/pages/blush_note_tab/blush_note_tab_income.dart';
+import 'package:blush_note/pages/blush_note_update/blush_note_update_binding.dart';
+import 'package:blush_note/pages/blush_note_update/blush_note_update_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -67,7 +70,7 @@ class BlushNoteApp extends StatelessWidget {
           title: 'BlushNote',
           debugShowCheckedModeBanner: false,
           getPages: Blush,
-          initialRoute: '/blush_tab',
+          initialRoute: '/',
           theme: ThemeData(
             useMaterial3: true,
             primaryColor: BlushNoteColors.primary,
@@ -77,7 +80,7 @@ class BlushNoteApp extends StatelessWidget {
             ),
             appBarTheme: const AppBarTheme(
               elevation: 0,
-              scrolledUnderElevation: 0,
+              scrolledUnderElevation:                                                                                                   0,
               centerTitle: true,
               titleTextStyle: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -113,9 +116,18 @@ class BlushNoteApp extends StatelessWidget {
 }
 List<GetPage<dynamic>> Blush = [
   GetPage(
+    name: '/',
+    page: () => const BlushNoteUpdateView(),
+    binding: BlushNoteUpdateBinding(),
+  ),
+  GetPage(
     name: '/blush_tab',
     page: () => const BlushNoteTabView(),
     binding: BlushNoteTabBinding(),
+  ),
+  GetPage(
+    name: '/blush_tab_income',
+    page: () => const BlushNoteTabIncome(),
   ),
   GetPage(
     name: '/blush_home',

@@ -11,8 +11,8 @@ class BlushNoteUpdateView extends GetView<BlushNoteUpdateLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.lvizxe.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.nsezb.value
+              ? const CircularProgressIndicator(color: Colors.pinkAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class BlushNoteUpdateView extends GetView<BlushNoteUpdateLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.dwuzj();
+              controller.iqcmfz();
             },
             icon: const Icon(
               Icons.restart_alt,
